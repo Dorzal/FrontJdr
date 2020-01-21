@@ -3,12 +3,14 @@
     <mat-card-header class="title-card">
         {{ Salon?.nom }}
     </mat-card-header>
-    <mat-card-content *ngFor="let personnage of Salon.personnages">  
-    <img src="{{personnage?.avatar}}">
+    <mat-card-content *ngFor="let personnage of Salon.personnages;  let i=index">
+        <div *ngIf="i< 4">
+            <img src="{{personnage?.avatar}}">
+        </div>  
     </mat-card-content>
 </mat-card>
 
-<mat-card class="box" (click)="openDialog()">
+<mat-card class="box" (click)="openDialog()" style="text-align: center;">
     <img src="https://img.icons8.com/plasticine/100/000000/plus-math.png" style="padding-top: 50px;">
 </mat-card>
 
