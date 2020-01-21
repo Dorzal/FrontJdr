@@ -8,10 +8,11 @@ import { PersonnageComponent } from './personnage/personnage.component';
 import { WikiComponent } from './wiki/wiki.component';
 import { MypersonnageComponent } from './mypersonnage/mypersonnage.component';
 import { AllsalonComponent } from './allsalon/allsalon.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
 
- 
+  { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'wiki', component: WikiComponent},
   { path: 'mypersonnage', component: MypersonnageComponent},

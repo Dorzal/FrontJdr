@@ -46,5 +46,10 @@ export class UtilisateurService {
     return this.http.get<Personnage[]>(url, httpOptions);
   }
 
+
+  newUtilisateur(utilisateur : Utilisateur): Observable<Utilisateur> {
+    return this.http.post<Utilisateur>(this.apiUrl, httpOptions )
+  }
+
 }
 

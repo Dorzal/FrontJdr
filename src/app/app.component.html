@@ -10,7 +10,8 @@
   <router-outlet></router-outlet>
 </main-nav>
 
-<app-login *ngIf="!currentUser"></app-login>
+<router-outlet *ngIf="!currentUser"></router-outlet>
+
 
 
 <!-- main app container -->

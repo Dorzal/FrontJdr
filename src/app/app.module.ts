@@ -34,6 +34,7 @@ import { MypersonnageComponent } from './mypersonnage/mypersonnage.component';
 import { AllsalonComponent } from './allsalon/allsalon.component';
 import { FormCompteComponent } from './form-compte/form-compte.component';
 import { FormInventaireComponent } from './form-inventaire/form-inventaire.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { FormInventaireComponent } from './form-inventaire/form-inventaire.compo
     AllsalonComponent,
     FormCompteComponent,
     FormInventaireComponent,
+    RegisterComponent,
   ],
   imports: [
     MatMenuModule,
