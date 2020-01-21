@@ -3,13 +3,13 @@
     <mat-card-header>
         <mat-card-title>Inscription</mat-card-title>
     </mat-card-header>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="example-form">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="example-form">
         <mat-card-content>
             <mat-form-field class="example-full-width">
             <input matInput placeholder="pseudo" formControlName="pseudo"  [ngClass]="{ 'is-invalid': submitted && f.pseudo.errors }">
             </mat-form-field>
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="Enter your password" formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" [type]="hide ? 'password' : 'text'">
+                <input matInput placeholder="Enter your password" formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" [type]="text ? 'password' : 'text'">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
