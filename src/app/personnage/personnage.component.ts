@@ -31,7 +31,7 @@ export class PersonnageComponent implements OnInit {
   deleteInventaireItem(id :number)
   {
     this.inventaireItemService.deleteInventaireItem(id).subscribe();
-    window.location.reload();
+    this.getPersonnage();
   }
 
   openDialog(): void {
@@ -40,7 +40,7 @@ export class PersonnageComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      window.location.reload();
+      this.getPersonnage();
     });
   }
 
@@ -50,7 +50,7 @@ export class PersonnageComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      window.location.reload();
+      this.getPersonnage();
     });
   }
 }
