@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      Pseudo: ['', Validators.required],
+      pseudo: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required]
   }, { validator: MustMatch('password', 'confirmPassword') });
@@ -38,12 +38,12 @@ export class RegisterComponent implements OnInit {
     }
 
     this.register(this.f.pseudo.value, this.f.password.value);
-    
+    this.router.navigate['/login'];
 }
 
   register(pseudo : string, password : string) {
     this.utilisateurService.newUtilisateur({pseudo, password} as Utilisateur).subscribe();
-    this.router.navigate['/login'];
+    
   }
 
 }
