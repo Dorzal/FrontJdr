@@ -1,6 +1,6 @@
 <div *ngFor="let personnage of Perso"  routerLink="/personnage/{{personnage?.id}}">
 
-    <mat-card class="box" style="margin: 50px; display: flex; flex-direction: row;">
+    <mat-card class="box" style="margin: 50px; display: flex; flex-direction: row; cursor: pointer;">
         <mat-card-header class="title-card" style="width: 400px;">
             <img src="{{personnage?.avatar}}">
             <p>{{ personnage?.nom }}</p>
