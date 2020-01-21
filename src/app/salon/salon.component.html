@@ -1,0 +1,37 @@
+
+<h1><img src="../../assets/var/Lava.gif">{{salon?.nom}}</h1>
+
+<p>{{salon?.info}}</p>
+
+<div *ngFor="let personnage of salon?.personnages"  routerLink="/personnage/{{personnage?.id}}">
+
+<mat-card class="box" style="margin: 50px; display: flex; flex-direction: row; cursor: pointer;">
+    <mat-card-header class="title-card" style="width: 400px;">
+        <img src="{{personnage?.avatar}}">
+        <p>{{ personnage?.nom }}</p>
+    </mat-card-header>
+    <mat-card-content >  
+        <div></div>
+        <div style="display: flex; flex-direction: row; justify-content: center; min-width: 50vw; ">
+        <p><img src="https://img.icons8.com/color/48/000000/shield.png">{{personnage?.defense}}</p>
+        <p><img src="https://img.icons8.com/color/48/000000/katana.png">{{personnage?.attaque}}</p>
+        <p><img src="https://img.icons8.com/color/48/000000/flex-biceps.png">{{personnage?.force}}</p>
+        <p><img src="https://img.icons8.com/doodle/48/000000/brain--v1.png">{{personnage?.intelligence}}</p>
+        <p><img src="https://img.icons8.com/color/48/000000/running--v1.png">{{personnage?.dexterite}}</p>
+        <p><img src="https://img.icons8.com/color/48/000000/filled-star.png">{{personnage?.charisme}}</p>
+        <p><img src="https://img.icons8.com/color/48/000000/guru.png">{{personnage?.sagesse}}</p>
+        <p><img src="https://img.icons8.com/doodle/48/000000/dice.png">{{personnage?.sauvegarde}}</p>
+        <p><img src="https://img.icons8.com/color/48/000000/hearts.png">{{personnage?.vitalite}}</p>
+    </div>
+    </mat-card-content>
+</mat-card>
+</div>
+
+<button mat-button (click)="openDialog()">Creer un personnage</button>
+
+<form [formGroup]="personnageForm" (ngSubmit)="onSubmit()" >
+    <mat-form-field>
+        <input matInput placeholder="nom" formControlName="nom"  [ngClass]="{ 'is-invalid': submitted && f.nom.errors }">
+    </mat-form-field>
+    <button mat-button >Créer un personnage Aléatoire</button>
+</form>

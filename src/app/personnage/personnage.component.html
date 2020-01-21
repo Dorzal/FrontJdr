@@ -1,0 +1,76 @@
+
+    <div style="display: grid; grid-auto-columns: 1fr 1fr; grid-auto-flow: column;">
+        <div>
+            <mat-card class="box" style="margin: 25px; height: 200px;">
+                <mat-card-header class="title-card">
+                    <h1>{{ personnage?.nom }}</h1><img src="{{personnage?.avatar}}">
+                </mat-card-header>
+                <mat-card-content>
+                    <p>{{personnage?.description}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div>
+            <mat-card class="box" style="margin: 25px; height: 200px;">
+                <mat-card-header>
+                    <h1>Compte</h1><button mat-button (click)="openDialog()" style="height: 45px;">Modif</button>
+                </mat-card-header>
+                <mat-card-content style=" text-align: center;">  
+                    <div style="display: flex; flex-direction: row; justify-content: center;">
+                        <p><img src="../../assets/var/po.png">{{personnage?.compte.totalPo}}</p>
+                        <p><img src="../../assets/var/pa.png">{{personnage?.compte.totalPa}}</p>
+                        <p><img src="../../assets/var/pc.png">{{personnage?.compte.totalPc}}</p>
+                    </div>
+                    
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div style="display: grid; grid-auto-columns: 1fr 1fr; grid-auto-flow: column;">
+        <div>
+            <div>
+                <mat-card class="box" style="margin: 25px;">
+                    <mat-card-header>
+                        <h1>Caracteristiques</h1>
+                    </mat-card-header>
+                    <mat-card-content style="text-align: center;">  
+                        <div style="display: flex; flex-direction: row; justify-content: center;">
+                            <p><img src="https://img.icons8.com/color/48/000000/shield.png">{{personnage?.defense}}</p>
+                            <p><img src="https://img.icons8.com/color/48/000000/katana.png">{{personnage?.attaque}}</p>
+                            <p><img src="https://img.icons8.com/color/48/000000/flex-biceps.png">{{personnage?.force}}</p>
+                            <p><img src="https://img.icons8.com/doodle/48/000000/brain--v1.png">{{personnage?.intelligence}}</p>
+                            <p><img src="https://img.icons8.com/color/48/000000/running--v1.png">{{personnage?.dexterite}}</p>
+                            <p><img src="https://img.icons8.com/color/48/000000/filled-star.png">{{personnage?.charisme}}</p>
+                            <p><img src="https://img.icons8.com/color/48/000000/guru.png">{{personnage?.sagesse}}</p>
+                            <p><img src="https://img.icons8.com/doodle/48/000000/dice.png">{{personnage?.sauvegarde}}</p>
+                            <p><img src="https://img.icons8.com/color/48/000000/hearts.png">{{personnage?.vitalite}}</p>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div>
+                <mat-card class="box" style="margin: 25px;">
+                    <mat-card-header class="title-card">
+                        <h1>{{personnage?.classe?.nom}}</h1>
+                    </mat-card-header>
+                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; ">  
+                        <div></div>
+                        <p *ngFor="let sort of personnage?.classe?.sorts" ><img src="{{sort?.logo}}">{{sort?.name}}</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+
+        <div>
+            <mat-card class="box" style="margin: 25px; text-align: center; min-height: 82%;">
+                <mat-card-header>
+                    <h1>Inventaire ({{personnage?.inventaire.taille}})</h1><button mat-button (click)="openDialogInventaire(personnage?.inventaire.id)" style="height: 45px;">Shop</button>
+                </mat-card-header>
+                <mat-card-content>  
+                    <mat-list *ngFor="let item of personnage?.inventaire.inventaireItems">
+                        <mat-list-item><img src="{{item?.objet?.logo}}"> {{item?.objet?.nom}} <button mat-button (click)="deleteInventaireItem(item?.id)" style="height: 25px;">Jeter</button></mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>

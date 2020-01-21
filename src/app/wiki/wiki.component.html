@@ -1,0 +1,64 @@
+<mat-tab-group animationDuration="0ms">
+    <mat-tab label="Objets">
+
+        <table class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Logo</th>
+                    <th>Nom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let o of Obj">
+                      
+                          <td>{{o?.id}}</td>
+                          <td><img src="{{o?.logo}}"></td>
+                          <td>{{o?.nom}}</td>
+                      
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                  <th>Id</th>
+                  <th>Logo</th>
+                  <th>Nom</th>
+                </tr>
+            </tfoot>
+          </table>
+
+
+    </mat-tab>
+    <mat-tab label="Second">
+        
+        <table class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Icone</th>
+                    <th>Nom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of Equip">
+                      
+                          <td>{{e?.id}}</td>
+                          <td><img src="{{e?.icone}}"></td>
+                          <td>{{e?.nom}}</td>
+                      
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                  <th>Id</th>
+                  <th>Icone</th>
+                  <th>Nom</th>
+                </tr>
+            </tfoot>
+          </table>
+
+    </mat-tab>
+  </mat-tab-group>
+  
+
+

@@ -1,0 +1,9 @@
+
+<mat-card class="box" *ngFor="let Salon of Salons" routerLink="/salon/{{Salon?.id}}">
+    <mat-card-header class="title-card">
+        {{ Salon?.nom }}
+    </mat-card-header>
+    <mat-card-content *ngFor="let personnage of Salon.personnages">  
+    <img src="{{personnage?.avatar}}">
+    </mat-card-content>
+</mat-card>

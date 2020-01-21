@@ -1,0 +1,17 @@
+
+<!-- <nav *ngIf="currentUser">
+  <div >
+      <a routerLink="/">Home</a>
+      <a (click)="logout()">Logout</a>
+  </div>
+</nav> -->
+
+<main-nav *ngIf="currentUser">
+  <router-outlet></router-outlet>
+</main-nav>
+
+<app-login *ngIf="!currentUser"></app-login>
+
+
+<!-- main app container -->
+

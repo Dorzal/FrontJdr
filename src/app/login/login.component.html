@@ -1,0 +1,29 @@
+
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+    <mat-card-header>
+        <mat-card-title>Log in</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="example-form">
+        <mat-card-content>
+            <mat-form-field class="example-full-width">
+            <input matInput placeholder="pseudo" formControlName="pseudo"  [ngClass]="{ 'is-invalid': submitted && f.pseudo.errors }">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Enter your password" formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <div *ngIf="submitted && f.pseudo.errors">
+                <div *ngIf="f.pseudo.errors.required">pseudo is required</div>
+            </div>
+            <div *ngIf="submitted && f.password.errors" >
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+            <div *ngIf="error">{{error}}</div>
+        </mat-card-content>
+        <button mat-stroked-button color="accent" class="btn-block">Log in</button>
+    </form>
+    </mat-card>
+</div>

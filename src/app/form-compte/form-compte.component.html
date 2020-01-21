@@ -1,0 +1,14 @@
+<form [formGroup]="compteForm" (ngSubmit)="onSubmit()" >
+    <mat-card-content>
+        <mat-form-field class="example-full-width">
+        <input matInput placeholder="totalPo" formControlName="totalPo" type="number"  [ngClass]="{ 'is-invalid': submitted && f.totalPo.errors }">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="totalPa" formControlName="totalPa" type="number" [ngClass]="{ 'is-invalid': submitted && f.totalPa.errors }">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="totalPc" formControlName="totalPc" type="number" [ngClass]="{ 'is-invalid': submitted && f.totalPc.errors }">
+        </mat-form-field>
+    </mat-card-content>
+    <button mat-stroked-button color="accent" class="btn-block">Modifier</button>
+</form>

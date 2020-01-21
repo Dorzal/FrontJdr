@@ -1,0 +1,50 @@
+<form [formGroup]="personnageForm" (ngSubmit)="onSubmit()" >
+    <mat-card-content>
+        <mat-form-field class="example-full-width">
+        <input matInput placeholder="nom" formControlName="nom"  [ngClass]="{ 'is-invalid': submitted && f.nom.errors }">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Force</mat-label>
+        <input matInput placeholder="force" formControlName="force"  [ngClass]="{ 'is-invalid': submitted && f.force.errors }" type="number">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Dexterite</mat-label>
+        <input matInput placeholder="dexterite" formControlName="dexterite"  [ngClass]="{ 'is-invalid': submitted && f.dexterite.errors }" type="number">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Charisme</mat-label>
+        <input matInput placeholder="charisme" formControlName="charisme"  [ngClass]="{ 'is-invalid': submitted && f.charisme.errors }" type="number">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Constitution</mat-label>
+        <input matInput placeholder="constitution" formControlName="constitution"  [ngClass]="{ 'is-invalid': submitted && f.constitution.errors }" type="number">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Sagesse</mat-label>
+        <input matInput placeholder="sagesse" formControlName="sagesse"  [ngClass]="{ 'is-invalid': submitted && f.sagesse.errors }" type="number">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <textarea matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="10"
+            cdkAutosizeMaxRows="20" placeholder="Donne des infos" formControlName="description"  [ngClass]="{ 'is-invalid': submitted && f.description.errors }"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Classe</mat-label>
+            <mat-select formControlName="classe">
+              <mat-option *ngFor="let Classe of Classes"  [value]="Classe?.id" >
+                {{Classe?.nom}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card-content>
+    <button mat-stroked-button color="accent" class="btn-block">Créer</button>
+</form>

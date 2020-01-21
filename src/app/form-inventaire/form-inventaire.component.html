@@ -1,0 +1,13 @@
+<form [formGroup]="inventaireForm" (ngSubmit)="onSubmit()" >
+    <mat-card-content>
+        <mat-form-field class="example-full-width">
+            <mat-label>Objet</mat-label>
+            <mat-select formControlName="objet">
+              <mat-option *ngFor="let ob of Obj"  [value]="ob?.id" >
+                {{ob?.nom}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card-content>
+    <button mat-stroked-button color="accent" class="btn-block">Prendre</button>
+</form>
