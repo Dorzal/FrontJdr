@@ -31,4 +31,11 @@ export class PersonnageService {
     return this.http.post(`${this.apiUrl}/random`, data, httpOptions);
   }
 
+  deletePersonnage( id :number){
+    
+    const url = `${this.apiUrl}/${id}`;
+
+    return this.http.delete<any>(url, httpOptions);
+  }
+
 }
