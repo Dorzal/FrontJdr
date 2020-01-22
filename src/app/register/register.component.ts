@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UtilisateurService } from '../services';
 import { MustMatch } from '../helpers/must-match.validator';
 import { Router } from '@angular/router';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-register',
@@ -37,13 +38,7 @@ export class RegisterComponent implements OnInit {
         return;
     }
 
-    this.register(this.f.pseudo.value, this.f.password.value);
-    this.router.navigate['/login'];
+    this.utilisateurService.newUtilisateur(this.registerForm.value).pipe(first()).subscribe(data => this.router.navigate(['/login']));
 }
-
-  register(pseudo : string, password : string) {
-    this.utilisateurService.newUtilisateur({pseudo, password} as Utilisateur).subscribe();
-    
-  }
 
 }

@@ -36,6 +36,7 @@ export class SalonComponent implements OnInit {
     }
 
     this.randomPersonnage(this.f.nom.value, this.salon.id);
+    this.getSalon();
     
 }
 

@@ -1,0 +1,80 @@
+.wrapp {
+    display: grid; grid-auto-columns: 1fr 1fr; grid-auto-flow: column;
+}
+
+
+.box {
+    margin: 25px; height: 180px;
+}
+
+.btn-dialog {
+    height: 45px;
+}
+
+.content {
+    text-align: center;
+}
+
+.compte-wrapper {
+    display: flex; flex-direction: row; justify-content: center;
+}
+
+.wrapper-carac-classe {
+    display: grid; grid-auto-columns: 1fr 1fr; grid-auto-flow: column;
+}
+
+
+.content-classe {
+    display: flex; flex-direction: row; justify-content: center; 
+}
+
+.box-inventaire {
+    margin: 25px; text-align: center; min-height: 89%;
+}
+
+.info {
+    display: flex; flex-direction: row; justify-content: center;
+}
+
+.box-carac {
+    margin: 25px; height: 180px;
+}
+
+@media screen and (max-width: 640px) {
+    .wrapp {
+        display:block;
+    }
+    
+    
+    .box {
+        min-width: 90vw;
+        min-height: 300px;
+        margin: 20px;
+    }
+    
+
+    .box-carac {
+        min-height: 200px;
+        margin: 20px;
+        min-width: 90vw;
+
+    }
+
+    .img-carac {
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+
+    }
+    
+    .wrapper-carac-classe {
+
+        display : block;
+        
+    }
+    
+    
+    .box-inventaire {
+        height: auto;
+    }
+  }

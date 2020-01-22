@@ -47,8 +47,8 @@ export class UtilisateurService {
   }
 
 
-  newUtilisateur(utilisateur : Utilisateur): Observable<Utilisateur> {
-    return this.http.post<Utilisateur>(`${environment.rootUrl}/register`, utilisateur ,httpOptions )
+  newUtilisateur(utilisateur : Utilisateur) {
+    return this.http.post(`${environment.rootUrl}/register`, utilisateur ,httpOptions );
   }
 
 }

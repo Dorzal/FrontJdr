@@ -3,11 +3,12 @@
     <mat-card-header class="title-card">
         {{ Salon?.nom }}
     </mat-card-header>
-    <mat-card-content *ngFor="let personnage of Salon.personnages; let i=index">  
-        <div *ngIf="i < 4" style="-webkit-columns: 2;
-        -moz-columns: 2;
-        columns: 2;">
-            <img src="{{personnage?.avatar}}">
-        </div> 
+    <mat-card-content style="display: flex; ">
+        <div *ngFor="let personnage of Salon.personnages;  let i=index" >
+            <div *ngIf="i< 4" style="max-height: 60px; max-width: 60px;">
+                <img src="{{personnage?.avatar}}"> <p>{{personnage?.nom}}</p>
+            </div>  
+        </div>
+        
     </mat-card-content>
 </mat-card>

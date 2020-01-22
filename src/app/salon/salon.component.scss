@@ -1,1 +1,15 @@
 .mat-stroked-button{border:1px solid currentColor;line-height:30px;background:#FFF7FA; width: 300px;}
+
+
+.info-carac{
+    display: flex; flex-direction: row; justify-content: center; min-width: 50vw; 
+}
+
+
+@media screen and (max-width: 640px) {
+
+    .info-carac{
+        display: none;
+    }
+
+}
