@@ -1,5 +1,5 @@
 <mat-tab-group animationDuration="0ms">
-    <mat-tab label="Objets">
+    <mat-tab label="Urbain">
 
         <table class="table table-striped table-bordered" style="width:100%">
             <thead>
@@ -7,6 +7,7 @@
                     <th>Id</th>
                     <th>Logo</th>
                     <th>Nom</th>
+                    <th colspan=3>Prix</th>
                 </tr>
             </thead>
             <tbody>
@@ -15,6 +16,9 @@
                           <td>{{o?.id}}</td>
                           <td><img src="{{o?.logo}}"></td>
                           <td>{{o?.nom}}</td>
+                          <td>{{o?.prixPo}} po</td>
+                          <td>{{o?.prixPa}} pa</td>
+                          <td>{{o?.prixPc}} pc</td>
                       
                 </tr>
             </tbody>
@@ -29,29 +33,33 @@
 
 
     </mat-tab>
-    <mat-tab label="Equipements">
+    <mat-tab label="Rural">
         
         <table class="table table-striped table-bordered" style="width:100%">
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Icone</th>
+                    <th>Logo</th>
                     <th>Nom</th>
+                    <th colspan=3>Prix</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let e of Equip">
+                <tr *ngFor="let o of Obj">
                       
-                          <td>{{e?.id}}</td>
-                          <td><img src="{{e?.icone}}"></td>
-                          <td>{{e?.nom}}</td>
+                          <td>{{o?.id}}</td>
+                          <td><img src="{{o?.logo}}"></td>
+                          <td>{{o?.nom}}</td>
+                          <td>{{o?.prixPoRural}} po</td>
+                          <td>{{o?.prixPaRural}} pa</td>
+                          <td>{{o?.prixPcRural}} pc</td>
                       
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
                   <th>Id</th>
-                  <th>Icone</th>
+                  <th>Logo</th>
                   <th>Nom</th>
                 </tr>
             </tfoot>
