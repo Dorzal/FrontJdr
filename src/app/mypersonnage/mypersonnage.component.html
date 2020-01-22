@@ -1,4 +1,4 @@
-<div *ngFor="let personnage of Perso"  >
+<div *ngFor="let personnage of Perso" style="text-align: center;" >
 
     <mat-card class="box" style="margin: 50px; display: flex; flex-direction: row; cursor: pointer;" routerLink="/personnage/{{personnage?.id}}">
         <mat-card-header class="title-card" style="width: 400px;">
@@ -17,8 +17,9 @@
             <p><img src="https://img.icons8.com/color/48/000000/guru.png">{{personnage?.sagesse}}</p>
             <p><img src="https://img.icons8.com/doodle/48/000000/dice.png">{{personnage?.constitution}}</p>
             <p><img src="https://img.icons8.com/color/48/000000/hearts.png">{{personnage?.vitalite}}</p>
-        </div>
+            </div>
         </mat-card-content>
     </mat-card>
-    <button mat-stroked-button color="accent" (click)="deleteMyPersonnage(personnage?.id)" >supprimer</button>
+    <button mat-stroked-button color="accent" (click)="deleteMyPersonnage(personnage?.id)">supprimer</button>
+    
 </div>

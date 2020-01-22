@@ -25,6 +25,7 @@ export class MypersonnageComponent implements OnInit {
 
   deleteMyPersonnage(id : number) {
     this.personnageService.deletePersonnage(id).subscribe();
+    this.getMyPersonnage();
   }
 
 }
