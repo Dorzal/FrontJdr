@@ -1,0 +1,12 @@
+.info-carac{
+    display: flex; flex-direction: row; justify-content: center; min-width: 50vw; 
+}
+
+
+@media screen and (max-width: 640px) {
+
+    .info-carac{
+        display: none;
+    }
+
+}
