@@ -49,9 +49,22 @@ export class PersonnageService {
     return this.http.patch(url,data, httpPatch )
   }
 
-  addclasse(classe, idclasse, idperso){
+  addclasse(classe1, idclasse, classe2id, classe3id, idperso){
     const url = `${this.apiUrl}/${idperso}`;
-    let data = JSON.stringify({"classe" : classe.puch(`${environment.rootUrl}/classes/${idclasse}`) })
+    let data;
+    if (classe3id != null ){
+      data = JSON.stringify({"classe" : [`/api/classes/${classe1}`, `/api/classes/${classe2id}`, `/api/classes/${classe3id}`, `/api/classes/${idclasse}`] })
+    } else if(classe2id != null) {
+      data = JSON.stringify({"classe" : [`/api/classes/${classe1}`, `/api/classes/${classe2id}`, `/api/classes/${idclasse}`] })
+    } else {
+      data = JSON.stringify({"classe" : [`/api/classes/${classe1}`, `/api/classes/${idclasse}`] })
+    }
+    return this.http.patch(url,data, httpPatch )
+  }
+
+  patchNote(id, note){
+    const url = `${this.apiUrl}/${id}`;
+    let data = JSON.stringify({"note" : note })
     return this.http.patch(url,data, httpPatch )
   }
 
