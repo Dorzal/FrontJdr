@@ -53,4 +53,8 @@ export class PersonnageComponent implements OnInit {
       this.getPersonnage();
     });
   }
+
+  niveau(lvl, id) {
+    this.PersonnageService.lvlup(lvl, id).subscribe(data => this.getPersonnage());
+  }
 }
