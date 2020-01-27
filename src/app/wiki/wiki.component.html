@@ -16,9 +16,9 @@
                           <td>{{o?.id}}</td>
                           <td><img src="{{o?.logo}}"></td>
                           <td>{{o?.nom}}</td>
-                          <td>{{o?.prixPo}} po</td>
-                          <td>{{o?.prixPa}} pa</td>
-                          <td>{{o?.prixPc}} pc</td>
+                          <td><div *ngIf="o?.prixPo != 0">{{o?.prixPo}}</div></td>
+                          <td><div *ngIf="o?.prixPa != 0">{{o?.prixPa}}</div></td>
+                          <td><div *ngIf="o?.prixPc != 0">{{o?.prixPc}}</div></td>
                       
                 </tr>
             </tbody>
@@ -50,9 +50,9 @@
                           <td>{{o?.id}}</td>
                           <td><img src="{{o?.logo}}"></td>
                           <td>{{o?.nom}}</td>
-                          <td>{{o?.prixPoRural}} po</td>
-                          <td>{{o?.prixPaRural}} pa</td>
-                          <td>{{o?.prixPcRural}} pc</td>
+                          <td><div *ngIf="o?.prixPoRural != 0">{{o?.prixPoRural}}</div></td>
+                          <td><div *ngIf="o?.prixPaRural != 0">{{o?.prixPaRural}}</div></td>
+                          <td><div *ngIf="o?.prixPcRural != 0">{{o?.prixPcRural}}</div></td>
                       
                 </tr>
             </tbody>

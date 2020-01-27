@@ -32,7 +32,9 @@ export class FormPersonnageComponent implements OnInit {
       constitution: [0, Validators.required],
       sagesse: [0, Validators.required],
       description: ['', Validators.required],
-      classe: ['', Validators.required]
+      classe: ['', Validators.required],
+      categorieDe: [0, Validators.required],
+      histoireDe: [0, Validators.required],
   });
   
   }
@@ -47,13 +49,13 @@ export class FormPersonnageComponent implements OnInit {
         return;
     }
 
-    this.addPersonnage(this.f.nom.value, this.f.force.value, this.f.dexterite.value ,this.f.intelligence.value, this.f.charisme.value, this.f.constitution.value, this.f.sagesse.value, this.f.description.value, '/api/classes/'+this.f.classe.value, '/api/salons/'+this.data['salon']);
+    this.addPersonnage(this.f.nom.value, this.f.force.value, this.f.dexterite.value ,this.f.intelligence.value, this.f.charisme.value, this.f.constitution.value, this.f.sagesse.value, this.f.categorieDe.value, this.f.histoireDe.value,this.f.description.value, ['/api/classes/'+this.f.classe.value], '/api/salons/'+this.data['salon']);
     this.MatdialogRef.close();
     
 }
-  addPersonnage(nom :string, force :number, dexterite : number, intelligence :number, charisme :number, constitution :number, sagesse :number, description :string, classe :any,salon :any){
+  addPersonnage(nom :string, force :number, dexterite : number, intelligence :number, charisme :number, constitution :number, sagesse :number,categorieDe : number, histoireDe: number, description :string, classe :any,salon :any){
 
-  this.personnageService.addPersonnage({nom, force, dexterite, intelligence, charisme, constitution, sagesse, description, classe ,salon} as any).subscribe();
+  this.personnageService.addPersonnage({nom, force, dexterite, intelligence, charisme, constitution, sagesse, categorieDe, histoireDe, description, classe ,salon} as any).subscribe();
 
   }
 

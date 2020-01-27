@@ -30,6 +30,16 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
+            <mat-label>Categorie Histoire</mat-label>
+        <input matInput placeholder="categorieDe" formControlName="categorieDe"  [ngClass]="{ 'is-invalid': submitted && f.categorieDe.errors }" type="number">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Histoire</mat-label>
+        <input matInput placeholder="histoireDe" formControlName="histoireDe"  [ngClass]="{ 'is-invalid': submitted && f.histoireDe.errors }" type="number">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
             <textarea matInput
             cdkTextareaAutosize
             #autosize="cdkTextareaAutosize"
