@@ -36,6 +36,7 @@ import { FormCompteComponent } from './form-compte/form-compte.component';
 import { FormInventaireComponent } from './form-inventaire/form-inventaire.component';
 import { RegisterComponent } from './register/register.component';
 import { FormClasseComponent } from './form-classe/form-classe.component';
+import { FormSortComponent } from './form-sort/form-sort.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { FormClasseComponent } from './form-classe/form-classe.component';
     FormInventaireComponent,
     RegisterComponent,
     FormClasseComponent,
+    FormSortComponent,
   ],
   imports: [
     MatMenuModule,
@@ -86,6 +88,8 @@ import { FormClasseComponent } from './form-classe/form-classe.component';
     FormPersonnageComponent,
     FormCompteComponent,
     FormInventaireComponent,
+    FormClasseComponent,
+    FormSortComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

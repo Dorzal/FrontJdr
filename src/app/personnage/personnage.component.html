@@ -33,7 +33,7 @@
                 <div>
                     <mat-card class="box-carac">
                         <mat-card-header>
-                            <h1>Caracteristiques</h1><img src="https://img.icons8.com/offices/30/000000/chevron.png" (click)="niveau(personnage?.niveau,personnage?.id)" style="width: 20px; height: 20px; cursor: pointer;">
+                            <h1>Caracteristiques</h1><img src="https://img.icons8.com/offices/30/000000/chevron.png" *ngIf="personnage?.niveau <4" (click)="niveau(personnage?.niveau,personnage?.id)" style="width: 20px; height: 20px; cursor: pointer;">
                         </mat-card-header>
                         <mat-card-content class="content" >  
                             <div class="info">
@@ -57,11 +57,10 @@
                         </mat-card-header>
                         <mat-card-content class="content-classe">  
                             <div></div>
-                            <p *ngFor="let sort of c.sorts" ><img src="{{sort?.logo}}">{{sort?.name}}</p>
+                            <p *ngFor="let sort of c.sorts" (click)="openDialogSort(sort?.id)" style="cursor: pointer;"><img src="{{sort?.logo}}">{{sort?.name}}</p>
                         </mat-card-content>
-
                     </mat-card>
-                    
+                    <button mat-button *ngIf="personnage?.classe.length <4" (click)="openDialogClasse(personnage?.id, personnage?.classe[0]?.id, personnage?.classe[1]?.id || null, personnage?.classe[2]?.id || null)" style="height: 45px;">Ajouter une classe</button>
                 </div>
             </div> 
         </div>
@@ -84,7 +83,16 @@
                 <h1>Prise de notes</h1>
             </mat-card-header>
             <mat-card-content>  
-                {{personnage?.notes}}
+                <form [formGroup]="noteForm" (ngSubmit)="onSubmit()" >
+                    <mat-form-field class="example-full-width">
+                        <textarea matInput
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="20"
+                        cdkAutosizeMaxRows="50" formControlName="note"  [ngClass]="{ 'is-invalid': submitted && f.note.errors }">{{personnage?.note}}</textarea>
+                    </mat-form-field>
+                    <button mat-stroked-button color="accent" class="btn-block">Sauvegarder</button>
+                </form>
             </mat-card-content>
         </mat-card>
     </div>

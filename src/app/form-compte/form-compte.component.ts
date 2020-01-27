@@ -20,9 +20,9 @@ export class FormCompteComponent implements OnInit {
 
   ngOnInit() {
     this.compteForm = this.formBuilder.group({
-      totalPo: [this.data['totalPo'], Validators.required],
-      totalPa: [this.data['totalPa'], Validators.required],
-      totalPc: [this.data['totalPc'], Validators.required],
+      totalPo: this.data['totalPo'],
+      totalPa: this.data['totalPa'],
+      totalPc: this.data['totalPc'],
 
   });
   console.log(this.data);
@@ -45,7 +45,7 @@ export class FormCompteComponent implements OnInit {
 }
 
   updateCompte(id : number, totalPo: number, totalPa: number, totalPc : number): void {
-    if (!totalPo || !totalPa || !totalPc) { return;}
+    
     this.compteService.updateCompte({totalPo, totalPa, totalPc} as any, id).subscribe(data => console.log('ok'));
   } 
 
