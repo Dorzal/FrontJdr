@@ -2,7 +2,7 @@
     <div class="page-gauche">
         <div class="wrapp">
             <div>
-                <mat-card class="box">
+                <mat-card class="box-perso">
                     <mat-card-header class="title-card">
                         <h1>{{ personnage?.nom }} ({{ personnage?.niveau }})</h1><img src="{{personnage?.avatar}}">
                     </mat-card-header>
@@ -33,7 +33,7 @@
                 <div>
                     <mat-card class="box-carac">
                         <mat-card-header>
-                            <h1>Caracteristiques</h1>
+                            <h1>Caracteristiques</h1><img src="https://img.icons8.com/offices/30/000000/chevron.png" (click)="niveau(personnage?.niveau,personnage?.id)" style="width: 20px; height: 20px; cursor: pointer;">
                         </mat-card-header>
                         <mat-card-content class="content" >  
                             <div class="info">

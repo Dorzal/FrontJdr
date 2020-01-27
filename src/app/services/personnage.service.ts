@@ -8,6 +8,10 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json ', 'Accept': 'application/json'})
 };
 
+const httpPatch = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/merge-patch+json', 'Accept': 'application/json'})
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -36,6 +40,19 @@ export class PersonnageService {
     const url = `${this.apiUrl}/${id}`;
 
     return this.http.delete<any>(url, httpOptions);
+  }
+
+  lvlup(lvl, id){
+    const url = `${this.apiUrl}/${id}`;
+    lvl = lvl +1;
+    let data = JSON.stringify({"niveau" : lvl })
+    return this.http.patch(url,data, httpPatch )
+  }
+
+  addclasse(classe, idclasse, idperso){
+    const url = `${this.apiUrl}/${idperso}`;
+    let data = JSON.stringify({"classe" : classe.puch(`${environment.rootUrl}/classes/${idclasse}`) })
+    return this.http.patch(url,data, httpPatch )
   }
 
 }
