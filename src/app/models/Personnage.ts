@@ -13,7 +13,7 @@ export default class Personnage {
     description: string;
     avatar: string;
     vitalite: number;
-    classe: Classe[];
+    classe: [Classe[]];
     attaque: number;
     defense: number;
     sagesse: number;
@@ -22,4 +22,8 @@ export default class Personnage {
     compte: Compte[];
     inventaire: Inventaire;
     mort: boolean;
+    note: string;
+    categorieDe : number;
+    histoireDe : number;
+    histoire: string;
 }
