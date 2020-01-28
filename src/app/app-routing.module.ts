@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'wiki', component: WikiComponent},
   { path: 'mypersonnage', component: MypersonnageComponent},
   { path: "salon/:id", component: SalonComponent},
-  { path: 'salons', component: AllsalonComponent},
+  { path: 'loby', component: AllsalonComponent},
   { path: "personnage/:id", component: PersonnageComponent},
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   { path: '**', redirectTo: 'home' }

@@ -36,7 +36,7 @@ export class SalonComponent implements OnInit {
     }
 
     this.randomPersonnage(this.f.nom.value, this.salon.id);
-    this.getSalon();
+    
     
 }
 
@@ -58,7 +58,7 @@ export class SalonComponent implements OnInit {
   }
 
   randomPersonnage(nom, salon) : void {
-    this.personnageService.randomPersonnage(nom, salon).subscribe();
+    this.personnageService.randomPersonnage(nom, salon).subscribe(() => this.getSalon());
   }
 
 }
