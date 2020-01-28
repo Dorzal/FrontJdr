@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  rootUrl: 'http://212.47.230.23/api',
+  rootUrl: 'https://pickadice-api.fr/api',
   //url: 'http://localhost:4200'
-  url: 'http://51.15.229.59'
+  url: 'https://pickadice.fr'
 };
 
 /*
