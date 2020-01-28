@@ -7,10 +7,7 @@ import { MatDialog } from '@angular/material';
 import { FormInventaireComponent } from '../form-inventaire/form-inventaire.component';
 import { InventaireItemService } from '../services/inventaire-item.service';
 import { FormClasseComponent } from '../form-classe/form-classe.component';
-import Classe from '../models/Classe';
 import { FormSortComponent } from '../form-sort/form-sort.component';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { stringToKeyValue } from '@angular/flex-layout/extended/typings/style/style-transforms';
 
 @Component({
   selector: 'app-Personnage',
@@ -20,29 +17,12 @@ import { stringToKeyValue } from '@angular/flex-layout/extended/typings/style/st
 export class PersonnageComponent implements OnInit {
 
   personnage : Personnage;
-  noteForm: FormGroup;
-  submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private inventaireItemService : InventaireItemService ,private PersonnageService: PersonnageService, private route: ActivatedRoute, public dialog: MatDialog) { }
+  constructor(private inventaireItemService : InventaireItemService ,private PersonnageService: PersonnageService, private route: ActivatedRoute, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.getPersonnage();
-    this.noteForm = this.formBuilder.group({
-      note : this.personnage.note
-  });
   }
-
-
-  get f() { return this.noteForm.controls; }
-
-  onSubmit() {
-    this.submitted = true;
-
-    this.patchNote(this.personnage.id, this.f.note.value);
-    this.getPersonnage();
-    
-}
-
 
   getPersonnage() : void 
   {
